@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Box from '@mui/system/Box';
+import Link from '@mui/material/Link';
 // import './services/db';
 
 
@@ -15,22 +16,42 @@ import Box from '@mui/system/Box';
 
 function BasicCard() {
   const [css, setcss] = useState({});
-  const [yes, setyes] = useState("R u dumb?");
+  const [yes, setyes] = useState("Are you dumb?");
   const [visible, setvisible] = useState(true);
+  let ryms = [
+    "Yeah, I knew it!",
+    "You are dumb!",
+    "Dumb, You just accepted it",
+  ]
+
+  let ryms2 = [
+    "Are u sure?",
+    "No, You are!",
+    "Please accept it!",
+    "I have Proof!",
+    "Are you dumb?",
+    "Yes You are dumb?"
+  ]
+
 
   const handleClick2 = () => {
-    setyes("Yeah, I knew it!")
+    console.log(ryms.length);
+    setyes(ryms[(Math.random() * (ryms.length - 1)).toFixed()])
     setvisible(false)
   }
   const handleClick = () => {
     let { innerWidth: width, innerHeight: height } = window;
+    console.log(width, height);
     width = 0 + (Math.random() * (width - 0));
     height = 0 + (Math.random() * (height - 0));
-    setcss({ position: "absolute", left: `${width}px`, top: `${height}px` })
+    setyes(ryms2[(Math.random() * (ryms2.length - 1)).toFixed()])
+    setcss({ position: "absolute", left: `${width}px`, top: `${height}px`, backgroundColor: '#fff' })
   }
 
   return (
-    <Card sx={{ minWidth: 275, minHeight: 300 }}>
+    <Card sx={{
+      minWidth: 275, minHeight: 300,
+    }}>
       <CardContent>
         <Typography sx={{ fontSize: 14, }} color="text.secondary" gutterBottom>
           Coold
@@ -55,10 +76,13 @@ function BasicCard() {
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" sx>
       <header className="App-header">
         {BasicCard()}
       </header>
+      Developed By <Link href="https://github.com/dev-idblfs" underline="none">
+        developer.idblfs
+      </Link>
     </div>
   );
 }
