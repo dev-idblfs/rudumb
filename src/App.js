@@ -7,6 +7,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Box from '@mui/system/Box';
+// import './services/db';
+
 
 
 
@@ -22,8 +24,8 @@ function BasicCard() {
   }
   const handleClick = () => {
     let { innerWidth: width, innerHeight: height } = window;
-    width = 0 + (Math.random() * (500 - 0));
-    height = 0 + (Math.random() * (500 - 0));
+    width = 0 + (Math.random() * (width - 0));
+    height = 0 + (Math.random() * (height - 0));
     setcss({ position: "absolute", left: `${width}px`, top: `${height}px` })
   }
 
