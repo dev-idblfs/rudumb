@@ -76,13 +76,15 @@ function BasicCard() {
 
 function App() {
   return (
-    <div className="App" sx>
+    <div className="App" title='idblfs'>
       <header className="App-header">
         {BasicCard()}
       </header>
-      Developed By <Link href="https://github.com/dev-idblfs" underline="none">
-        developer.idblfs
-      </Link>
+      <Box component={"span"} sx={{ position: "relative", bottom: 20, backgroundColor:'Highlight' }}>
+        Developed By <Link title='developer.idblfs' href="https://github.com/dev-idblfs" underline="none">
+          developer.idblfs
+        </Link>
+      </Box>
     </div>
   );
 }
